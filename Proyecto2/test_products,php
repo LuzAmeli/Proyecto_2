@@ -1,0 +1,42 @@
+<?php
+require_once 'api/config/database.php';
+require_once 'api/models/Product.php';
+
+$database = new Database();
+$db = $database->connect();
+
+$product = new Product($db);
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Productos</title>
+    <link rel="stylesheet" href="/proyecto2/assets/css/styles.css">
+</head>
+<body>
+    <?php include 'public/partials/header.php'; ?>
+
+    <main class="container">
+        <h2>Listado de productos en la base de datos</h2>
+        
+        <div class="product-grid">
+            <?php
+            $stmt = $db->query("SELECT id, name, description, price FROM products");
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)): ?>
+                <div class="product-card">
+                    <h3><?= htmlspecialchars($row['name']) ?></h3>
+                    <p><?= htmlspecialchars($row['description']) ?></p>
+                    <p class="price">$<?= number_format($row['price'], 2) ?></p>
+                    <div class="product-actions">
+                        <a href="/proyecto2/public/forms/product_view.php?id=<?= $row['id'] ?>" class="btn">Ver detalles</a>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    </main>
+
+    <?php include 'public/partials/footer.php'; ?>
+</body>
+</html>

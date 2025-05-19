@@ -1,0 +1,90 @@
+.sale-container {
+    display: flex;
+    gap: 20px;
+}
+
+.sale-form {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.resumen {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-table th {
+    background-color: #f2f2f2;
+}
+
+.terminos {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.enviar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.enviar:hover {
+    background-color: #45a049;
+}
+
+.cancelar {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancelar:hover {
+    background-color: #d32f2f;
+}
+
+#productosSeleccionados {
+    margin: 20px 0;
+}
+
+.producto-resumen {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.total {
+    font-size: 1.2em;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #333;
+}
